@@ -27,7 +27,7 @@ You can use this method to set or edit userID whenever after tapjoy already conn
 (string) userID
 
 #### Tapjoy.createPlacement(success_cb, error_cb, name)
-###### IMPORTANT: Create for every type of ad new placement.  
+###### IMPORTANT: Create for every type of ad new placement in your Tapjoy Dashboard.  
 In Tapjoy you can have many placements and types like Rewarded Videos, Skippable Videos, Offerwall etc.  
 You need to initialize every placements you have, using this method.  
 (string) - name of your placement
@@ -42,7 +42,11 @@ Show an ad.
 
 # Example
 
+In this sample I use [async.js](https://caolan.github.io/async/docs.html#each) but you can use what you want.
+
 ```js
+import async from 'async';
+
 let appKey = 'TapjoyAppKey';
 let userID = "Unique ID can be null";
 let debugMode = true;
@@ -55,7 +59,6 @@ Tapjoy.setup(() => {
     }, (error) => {
       callback(error)
     }, placement);
-  }
   }, (error) => {
     if (error) {
       console.log(error);
