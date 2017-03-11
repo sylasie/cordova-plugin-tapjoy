@@ -1,0 +1,30 @@
+{
+  "name": "cordova-plugin-tapjoy",
+  "version": "1.0.0",
+  "description": "Tapjoy ads for Apache Cordova",
+  "cordova": {
+    "id": "cordova-plugin-tapjoy",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notmedia/cordova-plugin-tapjoy.git"
+  },
+  "keywords": [
+    "tapjoy",
+    "ads",
+    "video",
+    "ad",
+    "plugin",
+    "ios",
+    "monetisation"
+  ],
+  "author": "notmedia",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/notmedia/cordova-plugin-tapjoy/issues"
+  },
+  "homepage": "https://github.com/notmedia/cordova-plugin-tapjoy#readme"
+}
