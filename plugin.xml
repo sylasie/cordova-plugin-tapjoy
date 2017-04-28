@@ -1,49 +1,60 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns=""
-        id="cordova-plugin-tapjoy-pro" version="1.0.0">
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-tapjoy-pro" version="1.0.0" xmlns="">
     <name>Tapjoy Plugin</name>
     <description>Cordova Tapjoy Plugin</description>
     <license>Apache-2.0</license>
     <keywords>cordova,tapjoy</keywords>
-    <js-module src="www/Tapjoy.js" name="Tapjoy">
+    <js-module name="Tapjoy" src="www/Tapjoy.js">
         <clobbers target="window.Tapjoy" />
     </js-module>
     <engines>
-        <engine name="cordova" version=">=1.7.0" />
-        <engine name="cordova-ios" version=">=4.3.0" />
+        <engine name="cordova" version="&gt;=1.7.0" />
+        <engine name="cordova-android" version=">=4.0.0" />
+        <engine name="cordova-ios" version="&gt;=4.3.0" />
     </engines>
     <platform name="ios">
-        <config-file target="config.xml" parent="/*">
+        <config-file parent="/*" target="config.xml">
             <feature name="TapjoyPlugin">
-                <param name="ios-package" value="TapjoyPlugin"/>
+                <param name="ios-package" value="TapjoyPlugin" />
             </feature>
         </config-file>
         <header-file src="src/ios/TapjoyPlugin.h" />
-  		<source-file src="src/ios/TapjoyPlugin.m" />
-        <framework src="AdSupport.framework"/>
-        <framework src="CFNetwork.framework"/>
-        <framework src="CoreData.framework"/>
-        <framework src="CoreGraphics.framework"/>
-        <framework src="CoreLocation.framework"/>
-        <framework src="CoreMotion.framework"/>
-        <framework src="CoreTelephony.framework"/>
-        <framework src="EventKitUI.framework"/>
-        <framework src="EventKit.framework"/>
-        <framework src="Foundation.framework"/>
-        <framework src="libc++.tbd"/>
-        <framework src="libsqlite3.0.tbd"/>
-        <framework src="libxml2.tbd"/>
-        <framework src="libz.tbd"/>             
-        <framework src="MapKit.framework"/>             
-        <framework src="MediaPlayer.framework"/>             
-        <framework src="MobileCoreServices.framework"/>             
-        <framework src="PassKit.framework"/>             
-        <framework src="QuartzCore.framework"/>             
-        <framework src="Security.framework"/>             
-        <framework src="Social.framework"/>             
-        <framework src="StoreKit.framework"/>             
-        <framework src="SystemConfiguration.framework"/>             
-        <framework src="Twitter.framework"/>             
+        <source-file src="src/ios/TapjoyPlugin.m" />
+        <framework src="AdSupport.framework" />
+        <framework src="CFNetwork.framework" />
+        <framework src="CoreData.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="CoreLocation.framework" />
+        <framework src="CoreMotion.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="EventKitUI.framework" />
+        <framework src="EventKit.framework" />
+        <framework src="Foundation.framework" />
+        <framework src="libc++.tbd" />
+        <framework src="libsqlite3.0.tbd" />
+        <framework src="libxml2.tbd" />
+        <framework src="libz.tbd" />
+        <framework src="MapKit.framework" />
+        <framework src="MediaPlayer.framework" />
+        <framework src="MobileCoreServices.framework" />
+        <framework src="PassKit.framework" />
+        <framework src="QuartzCore.framework" />
+        <framework src="Security.framework" />
+        <framework src="Social.framework" />
+        <framework src="StoreKit.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="Twitter.framework" />
         <framework src="UIKit.framework" />
+    </platform>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="Tapjoy Plugin">
+                <param name="android-package" value="cordova-plugin-tapjoy-pro.Tapjoy Plugin" />
+            </feature>
+        </config-file>
+        <!--<config-file parent="/*" target="AndroidManifest.xml"></config-file>-->
+        <framework src="src/android/tapjoy.gradle" custom="true" type="gradleReference" />
+        <source-file src="src/android/Tapjoy_Plugin.java"
+            target-dir="src/cordova-plugin-tapjoy-pro/Tapjoy_Plugin" />
     </platform>
 </plugin>
