@@ -5,6 +5,7 @@
   "cordova": {
     "id": "cordova-plugin-tapjoy",
     "platforms": [
+      "android",
       "ios"
     ]
   },
@@ -20,6 +21,16 @@
     "plugin",
     "ios",
     "monetisation"
+  ],
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=4.0.0"
+    },
+    {
+      "name": "cordova-ios",
+      "version": ">=3.8.0"
+    }
   ],
   "author": "notmedia",
   "license": "Apache-2.0",
