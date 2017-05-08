@@ -1,4 +1,4 @@
-package cordova-plugin-tapjoy-pro;
+package cordovaPluginTapjoyPro;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -22,13 +22,15 @@ public class Tapjoy_Plugin extends CordovaPlugin {
         initCppSide();
     }
 
-    public static void setup(RequestSuccess requestSuccess,RequestError requestError,boolean debug,int userId, String appkey) {
+    private native void initCppSide();
 
-        TapjoyCpp_h.setDebugEnabled(debug);
+    public static void setup(boolean requestSuccess,boolean requestError,boolean debug,int userId, String appkey) {
 
-        TapjoyCpp_h.setUserID(userId);
+        Tapjoy_Plugin.setDebugEnabled(debug);
 
-        TapjoyCpp_h.connect(appkey);
+        Tapjoy_Plugin.setUserID(userId);
+
+        Tapjoy_Plugin.connect(appkey);
 
     }
 
