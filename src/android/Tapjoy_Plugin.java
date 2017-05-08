@@ -1,4 +1,4 @@
-package cordovaPluginTapjoyPro;
+package cordovaPluginTapjoyPro.TapjoyPlugin;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -40,5 +40,4 @@ public class Tapjoy_Plugin extends CordovaPlugin {
 
     }
 
-    @Override
 }
