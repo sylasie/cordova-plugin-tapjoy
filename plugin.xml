@@ -54,6 +54,6 @@
         </config-file>
         <!--<config-file parent="/*" target="src/android/sdk/TapjoyEasyApp/AndroidManifest.xml"></config-file>-->
         <framework src="src/android/tapjoy.gradle" custom="true" type="gradleReference" />
-        <source-file src="src/android/Tapjoy_Plugin.java" target-dir="src/cordovaPluginTapjoyPro/Tapjoy_Plugin" />
+        <source-file src="src/android/Tapjoy_Plugin.java" target-dir="src/cordovaPluginTapjoyPro/TapjoyPlugin" />
     </platform>
 </plugin>
