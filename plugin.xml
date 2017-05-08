@@ -48,7 +48,7 @@
     </platform>
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
-            <feature name="Tapjoy Plugin">
+            <feature name="TapjoyPlugin">
                 <param name="android-package" value="cordovaPluginTapjoyPro.TapjoyPlugin" />
             </feature>
         </config-file>
