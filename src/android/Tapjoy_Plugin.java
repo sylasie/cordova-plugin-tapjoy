@@ -23,32 +23,22 @@ public class Tapjoy_Plugin extends CordovaPlugin {
     }
 
     private native void initCppSide();
+    public native void setDebugEnabled(boolean debug);
+    public native void setUserID(int id);
+    public native void connect(String appkey);
 
-    public static void setup(boolean requestSuccess,boolean requestError,boolean debug,int userId, String appkey) {
 
-        Tapjoy_Plugin.setDebugEnabled(debug);
+    public void setup(boolean debug,int userId, String appkey) {
 
-        Tapjoy_Plugin.setUserID(userId);
+        Tapjoy_Plugin tapjoy_plugin = new Tapjoy_Plugin();
 
-        Tapjoy_Plugin.connect(appkey);
+        tapjoy_plugin.setDebugEnabled(debug);
+
+        tapjoy_plugin.setUserID(userId);
+
+        tapjoy_plugin.connect(appkey);
 
     }
 
     @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("coolMethod")) {
-            String message = args.getString(0);
-            this.coolMethod(message, callbackContext);
-            return true;
-        }
-        return false;
-    }
-
-    private void coolMethod(String message, CallbackContext callbackContext) {
-        if (message != null && message.length() > 0) {
-            callbackContext.success(message);
-        } else {
-            callbackContext.error("Expected one non-empty string argument.");
-        }
-    }
 }
